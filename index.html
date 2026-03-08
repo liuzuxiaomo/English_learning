@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高效英语学习搭子</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            padding: 40px 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 150, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #4a69bd 0%, #6a89cc 100%);
+            color: white;
+            padding: 45px 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 15px auto 0;
+            line-height: 1.4;
+        }
+        
+        .theme-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .theme-box {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 0 10px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, rgba(255,255,255,0), #b7d0ff, rgba(255,255,255,0));
+            margin: 30px 40px;
+        }
+        
+        section {
+            padding: 30px 40px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #4a69bd;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 35px;
+            background: #4a69bd;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #5c7cba;
+            margin: 25px 0 18px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        h3::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #5c7cba;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+        }
+        
+        .highlight {
+            background: rgba(106, 137, 204, 0.08);
+            padding: 25px 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 4px solid #6a89cc;
+        }
+        
+        .resources {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .resource-card {
+            background: rgba(245, 247, 250, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #dee7f0;
+        }
+        
+        .wishes {
+            background: linear-gradient(90deg, #7ac5e4 0%, #a1ddd7 100%);
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+        
+        .wishes h2 {
+            color: white;
+            justify-content: center;
+        }
+        
+        .wishes h2::before {
+            background: white;
+        }
+        
+        .wishes h3 {
+            color: white;
+            font-size: 1.7rem;
+            margin: 10px 0 30px;
+        }
+        
+        .fire {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .rule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .rule-card {
+            background: #f0f7ff;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #d1e1f7;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .rule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(106, 137, 204, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .resources, .rule-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            header, section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>组建高效英语学习搭子.md</h1>
+            <p class="subtitle">自由成长式陪伴+异步资源共享+凝聚力约束</p>
+            <div class="theme-row">
+                <div class="theme-box">自由成长式陪伴</div>
+                <div class="theme-box">异步资源共享</div>
+                <div class="theme-box">凝聚力约束</div>
+            </div>
+        </header>
+        
+        <section>
+            <h2>轻量群规</h2>
+            <p>(只需3点，希望大家都能约定俗成，一起进步！)</p>
+            
+            <div class="rule-container">
+                <div class="rule-card">
+                    <h3>1 <strong>学习即陪伴！I'm there for you</strong></h3>
+                    <ul>
+                        <li><strong>形式：</strong> 不规定大家自己的学习时间，但如果今天你要开始学习英语，为四六级做准备了，方便的话，请尽量进入每天都会开通的腾讯会议，不管有没有人，我们需要你提供一个信号成为动力源泉！</li>
+                        <li><strong>目的：</strong> 不制造压力，让陪伴式学习变成<strong>轻量化又有温度</strong>！看到别人的努力能自然激发动力。</li>
+                    </ul>
+                </div>
+                
+                <div class="rule-card">
+                    <h3>2 <strong>"友善文明"守则</strong></h3>
+                    <ul>
+                        <li>会议中如有发言，请以 <strong>备考资源/鼓励/提问</strong> 为核心，避免无关刷屏或负面情绪发泄。</li>
+                        <li>消息群交流欢迎自由发言，结交朋友，分享学习习惯和思路，如果觉得消息叨扰，也可自行 <strong>"潜水"</strong> ，但不鼓励长时间潜水只索取资源不分享。</li>
+                        <li><strong>退出自由：</strong> 想退出只需告知一声即可，无负担。</li>
+                    </ul>
+                </div>
+                
+                <div class="rule-card">
+                    <h3>3 <strong>规划公开原则</strong></h3>
+                    <ul>
+                        <li>请规划好自己的学习，并且在群内的共享文档 <strong>“规划汇总”</strong> 简要写清楚你的规划，记录自己的学习，让它有条不紊，也让大家看见你的努力</li>
+                        <li>规划以周为时间单位，一直到四六级考试开始，分为两栏： <strong>本周学习计划和本周进度总结</strong> ，不用写得很繁琐，简要记录便可以发挥很大的作用</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <section>
+            <h2>资源共享</h2>
+            
+            <div class="resources">
+                <div class="resource-card">
+                    <h3>1 <strong>学习资源共享库</strong></h3>
+                    <ul>
+                        <li>使用 <strong>腾讯文档</strong> (带智能表格功能还凑活)。</li>
+                        <li><strong>核心页面：</strong> 高频资源分享表格</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>2 <strong>大型或宝藏资源网盘收纳</strong></h3>
+                    <ul>
+                        <li>当你对某类资源（如写作模板）极度渴求时，可在群里说：</li>
+                        <li>任何群友<strong>若恰好有现成资源/心得</strong>，发送一个 <strong>"资源小包"</strong> ，我会定时整理，大家可在网盘中下载。</li>
+                        <li><strong>特点：无强制，即时满足。</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <section>
+            <h2>注意事项</h2>
+            
+            <div class="highlight">
+                <strong>强调核心：</strong> <strong>这个群是用来"看见彼此"和"共享宝藏"的，不是每天汇报的！按自己节奏学习最重要。</strong>
+            </div>
+            
+            <ol>
+                <li>
+                    <strong>日常维护需要大家的努力！</strong>
+                    <ul>
+                        <li><strong>自由发挥里程碑打卡：</strong> 有成就感时顺手分享，别当成任务，我们都为你的进步感到开心！</li>
+                        <li><strong>利用文档沉淀资源：</strong> 看到好资料/解决难题后立刻存进去（1分钟搞定）。</li>
+                        <li><strong>希望大家放得开</strong> 真遇到难题或急需资源时，放心呼叫。</li>
+                        <li><strong>给予"精神火花"：</strong> 看到别人的里程碑打卡或资源分享，随手点赞👍或发🎉。</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <strong>边界守护：</strong>
+                    <ul>
+                        <li><strong>拒绝形式主义：</strong> 不设每日目标、不统计打卡次数。</li>
+                        <li><strong>异步优先：</strong> 任何需要深度讨论的问题建议会议内讨论，群消息容易叨扰其他人哈</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        
+        <div class="wishes">
+            <h2>最后祝愿</h2>
+            <h3>从今天起，就让大家自由生长吧！</h3>
+            <p>当第一个里程碑出现时，这个群的活力就会被点燃</p>
+            <div class="fire">🔥</div>
+            <p>祝我们每个人都能700+！</p>
+        </div>
+    </div>
+</body>
+</html>
